@@ -17,3 +17,10 @@ Arquivo config -> Terá todas as crendenciais responsáveis pela configuração 
 yarn sequelize db:create ->  cria um banco de dados via sequelize
 
 Arquivo .sequelizerc -> Ira informar ao sequelize onde está as configurações do nosso banco de dados.
+yarn sequelize migration:create --name=create-(nome da tabela no plural) -> cria a migrations
+
+As migration são  criadas de forma linear
+
+yarn sequelize db:migrate  -> executa  a migration.
+
+yarn sequelize db:migrate:undo -> reverte a ultima migration.
