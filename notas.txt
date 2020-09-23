@@ -1,0 +1,11 @@
+ Desenvolvimento de um api rest usando o typeORM Sequelize.
+
+migrations -> são um histórico de versão do banco de dados. Criação de tabelas,colunas, entre outros.
+
+Niveis de abstração  na  base de dados.(Foma de se comunicar com o banco de dados)
+
+1 º nivel nativo -> Podemos usar query dentro de string.
+
+2º nivel  querybuilder -> Criamos as querys dentro do javascript. Usamos o drive de banco de dados.
+
+3º nivel  ORM ->  Definimos os models para a comunição do banco de dados.
