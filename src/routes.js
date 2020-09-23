@@ -1,9 +1,10 @@
 const express  = require('express');
 const routes  = express.Router();
 
-routes.get('/', (request, response)=>{
-  return response.json({message: ' Rota de teste '});
-});
+
+const UserController = require('./controllers/UserController');
+
+routes.post('/users', UserController.store);
 
 
 module.exports =  routes;
