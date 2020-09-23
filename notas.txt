@@ -15,3 +15,5 @@ Arquivo database -> é o arquivo responsável pela conexão com o banco de dados
 Arquivo config -> Terá todas as crendenciais responsáveis pela configuração do banco.
 
 yarn sequelize db:create ->  cria um banco de dados via sequelize
+
+Arquivo .sequelizerc -> Ira informar ao sequelize onde está as configurações do nosso banco de dados.
