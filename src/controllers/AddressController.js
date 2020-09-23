@@ -1,8 +1,21 @@
 const Address  = require('../models/Address');
-const User = require('../models/User')
+const User = require('../models/User');
+const { response } = require('express');
+const { index } = require('./UserController');
+
 
 module.exports ={
+  
+  async index(request, response){
+    const { user_id } = request.params;
 
+    const user = await  User.findByPk(user_id,{
+      include:{ association: 'addresses'} 
+    });
+    return response.json(user);
+
+  },
+ 
   async store(request, reponse){
    const { user_id } = request.params;
    const { zipcode, street, number } = request.body;
@@ -19,9 +32,6 @@ module.exports ={
      number,
      user_id
    });
-
    return reponse.json(address);
-
-
   }
 }
