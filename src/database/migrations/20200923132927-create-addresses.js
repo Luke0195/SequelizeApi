@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
    
-     await queryInterface.createTable('users', { 
+     await queryInterface.createTable('addresses', { 
        
     id: {
       type: Sequelize.INTEGER, //tipo
@@ -12,13 +12,28 @@ module.exports = {
       allowNull: false, // Permitir nulo.
     },
 
-    name:{
+    user_id:{ // Relacionamento 1 para N 
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {  model: 'users', key:'id'}, // Fazendo a referencia da chave estrangeira.
+      onUpdate: 'CASCADE', // Qualquer mudança será refletida.
+      onDelete: 'CASCADE', // Qualquer exclusão será refletida.
+    },
+
+    zipcode:{
       type: Sequelize.STRING,
       allowNull: false,
     },
 
-    email:{
+
+
+    street:{
       type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+    number:{
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
 
@@ -41,7 +56,7 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => { // vai desfazer essa migration
    
-      await queryInterface.dropTable('users');
+      await queryInterface.dropTable('addresses');
      
   }
 };
