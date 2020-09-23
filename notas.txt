@@ -13,3 +13,5 @@ Niveis de abstração  na  base de dados.(Foma de se comunicar com o banco de da
 Arquivo database -> é o arquivo responsável pela conexão com o banco de dados.
 
 Arquivo config -> Terá todas as crendenciais responsáveis pela configuração do banco.
+
+yarn sequelize db:create ->  cria um banco de dados via sequelize
